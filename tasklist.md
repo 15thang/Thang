@@ -69,3 +69,5 @@ En dan events en matches.
 - Gratis = Matches bekijken en evenementen lijst.
 
 - Betaald = Competitie, Atleten lijst, Videos en exclusieve dingen.
+
+- Vooral back-end in orde eind van stage. Probeer week to week updates te laveren schema.
