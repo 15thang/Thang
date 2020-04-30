@@ -1,0 +1,108 @@
+table {
+    font-family: raleway, raleway;
+	font-weight: bold;
+    border-collapse: collapse;
+	border-radius: 15%;
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+	transition: 0.4s ease;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+	transition: 0.4s ease;
+    height: 90px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(221, 221, 221, 0.8);
+}
+
+tr{
+    background-color: rgba(255,255, 255, 0.5);
+}
+
+#field {
+    border-style: double;
+    float: left;
+    margin-left: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #8af78c;
+}
+/* edit athlete style */
+#field2 {
+    border-style: double;
+    float: left;
+    margin-left: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #ffc126;
+}
+
+input {
+    width: 193px;
+}
+
+select {
+    width: 193px;
+}
+
+#pic {
+    height: 50px;
+    width: 50px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.container-menu{
+	display: inline-flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+#container {
+    height: 100px;
+}
+
+.ssbutton{
+  text-align: center;
+  float: left;
+  position: relative;
+  padding: 5px 15px;
+  font-family: "raleway";
+  font-size: 24px;
+  margin-top: 5px;
+  margin-left: 20px;
+  letter-spacing: 1px;
+  background-color: black;
+  transition: 0.3s ease;
+  border: none;
+  color: #FFFFFF;
+  text-shadow: 5px 5px 5px #000000;
+  box-shadow: inset 0px 0px 50px 0px rgba(78, 49, 222,1), 0px 0px 30px 0px rgba(255,255,255,1);
+  border-radius: 5px;
+  border-top-style: none;
+  border-right-style: outset;
+  border-bottom-style: outset;
+  border-left-style: none;
+  cursor: pointer;
+}
+
+#hoverknop:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 163, 52,0) , rgba(217, 113, 113, 1) , rgba(0, 163, 52,0));
+	cursor: pointer;
+	transition: 0.4s ease;
+}
+
+#compinfo {
+    float: left;
+    width: 100px;
+    height: 50px;
+    padding: 1px;
+}
