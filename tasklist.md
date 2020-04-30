@@ -71,3 +71,5 @@ En dan events en matches.
 - Betaald = Competitie, Atleten lijst, Videos en exclusieve dingen.
 
 - Vooral back-end in orde eind van stage. Probeer week to week updates te laveren schema.
+
+- BUGFIX: Na nieuwe competitie toevoegen, pagina gaat naar localhost, moet gefixt worden. 
