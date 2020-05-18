@@ -4,7 +4,7 @@ import './Pages/AthletesPage.dart';
 import './Pages/VideoPage.dart';
 import './Pages/Competities.dart';
 import 'Pages/Competities.dart';
-import 'Pages/EventPage.dart';
+import 'Pages/eventPages/event_page.dart';
 
 void main() {
   runApp(new MaterialApp(

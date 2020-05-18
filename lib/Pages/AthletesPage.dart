@@ -47,37 +47,52 @@ class _AthletesPageState extends State<AthletesPage> {
         itemBuilder: (context, index) {
           String athleteWeightclass = _notes[index].athleteWeightclass;
           switch (athleteWeightclass) {
-            case '0':
-              athleteWeightclass = '';
-              break;
-            case '1':
-              athleteWeightclass = 'Heavyweight';
-              break;
-            case '2':
-              athleteWeightclass = 'Light Heavyweight';
-              break;
-            case '3':
-              athleteWeightclass = 'Middleweight';
-              break;
-            case '4':
-              athleteWeightclass = 'Welterweight';
-              break;
-            case '5':
-              athleteWeightclass = 'Lightweight';
-              break;
-            case '6':
-              athleteWeightclass = 'Featherweight';
-              break;
-            case '7':
-              athleteWeightclass = 'Bantamweight';
-              break;
-            case '8':
-              athleteWeightclass = 'Flyweight';
-              break;
-            case '9':
-              athleteWeightclass = 'Strawweight';
-              break;
-          }
+                    case "0":
+                        athleteWeightclass = "";
+                        break;
+                    case "1":
+                        athleteWeightclass = "95+";
+                        break;
+                    case "2":
+                        athleteWeightclass = "95";
+                        break;
+                    case "3":
+                        athleteWeightclass = "84";
+                        break;
+                    case "4":
+                        athleteWeightclass = "77";
+                        break;
+                    case "5":
+                        athleteWeightclass = "70";
+                        break;
+                    case "6":
+                        athleteWeightclass = "65";
+                        break;
+                    case "7":
+                        athleteWeightclass = "61";
+                        break;
+                    case "8":
+                        athleteWeightclass = "56";
+                        break;
+                    case "9":
+                        athleteWeightclass = "52";
+                        break;
+                    case "10":
+                        athleteWeightclass = "48";
+                        break;
+                    case "11":
+                        athleteWeightclass = "44";
+                        break;
+                    case "12":
+                        athleteWeightclass = "40";
+                        break;
+                    case "13":
+                        athleteWeightclass = "36";
+                        break;
+                    case "14":
+                        athleteWeightclass = "32";
+                        break;
+                }
           return new GestureDetector(
             onTap: () {
               Navigator.push(
