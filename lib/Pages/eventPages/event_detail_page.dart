@@ -50,9 +50,11 @@ class _EventPageState extends State<EventsDetailPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: Colors.grey[800],
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            backgroundColor: Colors.black,
             expandedHeight: 200.0,
             floating: false, //This is not needed since it's default
             pinned: true,
@@ -66,374 +68,120 @@ class _EventPageState extends State<EventsDetailPage> {
           ),
           new SliverList(
             delegate: new SliverChildBuilderDelegate(
-              (context, index) => new ListView.builder(
-                itemBuilder: (context, index) {
-                  return new GestureDetector(
-                    onTap: () {
-                      /*Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              AthletesDetailPage(athlete: _notes[index]),
+              (context, index) => new ListTile(
+                title: new Card(
+                  child: Container(
+                    color: Colors.blueGrey[50],
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        //redcorner
+                        Container(
+                          height: 220,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(5),
+                                topLeft: Radius.circular(5)),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              //red corner
+                              Container(
+                                width: 130,
+                                height: 130,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(5),
+                                      topLeft: Radius.circular(5)),
+                                  image: new DecorationImage(
+                                      image: new NetworkImage(
+                                          _notes[index].redcornerPicture),
+                                      fit: BoxFit.cover),
+                                ),
+                              ),
+                              //red corner
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                height: 90,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(_notes[index].redcornerFullName,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                    Text(_notes[index].redcornerNickname),
+                                    Text(_notes[index].redcornerNationality),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      );*/
-                    },
-                    child: new Card(
-                      color: Colors.blueGrey[50],
-                      elevation: 5,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          //redcorner
-                          Container(
-                            height: 220,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(5),
-                                  topLeft: Radius.circular(5)),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                //red corner
-                                Container(
-                                  width: 130,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        topLeft: Radius.circular(5)),
-                                    image: new DecorationImage(
-                                        image: new NetworkImage(
-                                            _notes[index].redcornerPicture),
-                                        fit: BoxFit.cover),
-                                  ),
-                                ),
-                                //red corner
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 90,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(_notes[index].redcornerFullName,
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      Text(_notes[index].redcornerNickname),
-                                      Text(_notes[index].redcornerNationality),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
+                        //vs
+                        Container(
+                          padding: const EdgeInsets.only(top: 30),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Text(' '),
+                              Text('VS',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                            ],
                           ),
-                          //vs
-                          Container(
-                            padding: const EdgeInsets.only(top: 30),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Text(' '),
-                                Text('VS',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                              ],
-                            ),
+                        ),
+                        //blue corner
+                        Container(
+                          height: 220,
+                          width: 187.4,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(5),
+                                topLeft: Radius.circular(5)),
                           ),
-                          //blue corner
-                          Container(
-                            height: 220,
-                            width: 187.4,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(5),
-                                  topLeft: Radius.circular(5)),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: <Widget>[
-                                //red corner
-                                Container(
-                                  width: 130,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        topLeft: Radius.circular(5)),
-                                    image: new DecorationImage(
-                                        image: new NetworkImage(
-                                            _notes[index].bluecornerPicture),
-                                        fit: BoxFit.cover),
-                                  ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              //red corner
+                              Container(
+                                width: 130,
+                                height: 130,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(5),
+                                      topLeft: Radius.circular(5)),
+                                  image: new DecorationImage(
+                                      image: new NetworkImage(
+                                          _notes[index].bluecornerPicture),
+                                      fit: BoxFit.cover),
                                 ),
-                                //red corner
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  height: 90,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text(_notes[index].bluecornerFullName,
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                      Text(_notes[index].bluecornerNickname),
-                                      Text(_notes[index].bluecornerNationality),
-                                    ],
-                                  ),
+                              ),
+                              //red corner
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                height: 90,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(_notes[index].bluecornerFullName,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                    Text(_notes[index].bluecornerNickname),
+                                    Text(_notes[index].bluecornerNationality),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-                itemCount: _notes.length,
-              ),
-              childCount: 10,
-            ),
-          ),
-          SliverFillRemaining(
-            child: new Center(
-              child: new Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    height: 50,
-                    child: Text(
-                      '${widget.event.eventDescription}' +
-                          " " +
-                          '${widget.event.eventId}',
-                      style: TextStyle(
-                        color: Colors.grey[100],
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.left,
+                        ),
+                      ],
                     ),
                   ),
-                  Expanded(
-                    child: ListView.builder(
-                      itemBuilder: (context, index) {
-                        //Change numbers to names
-                        String redcornerWeightclass =
-                            _notes[index].redcornerWeightclass;
-                        switch (redcornerWeightclass) {
-                          case "0":
-                            redcornerWeightclass = "";
-                            break;
-                          case "1":
-                            redcornerWeightclass = "95+";
-                            break;
-                          case "2":
-                            redcornerWeightclass = "95";
-                            break;
-                          case "3":
-                            redcornerWeightclass = "84";
-                            break;
-                          case "4":
-                            redcornerWeightclass = "77";
-                            break;
-                          case "5":
-                            redcornerWeightclass = "70";
-                            break;
-                          case "6":
-                            redcornerWeightclass = "65";
-                            break;
-                          case "7":
-                            redcornerWeightclass = "61";
-                            break;
-                          case "8":
-                            redcornerWeightclass = "56";
-                            break;
-                          case "9":
-                            redcornerWeightclass = "52";
-                            break;
-                          case "10":
-                            redcornerWeightclass = "48";
-                            break;
-                          case "11":
-                            redcornerWeightclass = "44";
-                            break;
-                          case "12":
-                            redcornerWeightclass = "40";
-                            break;
-                          case "13":
-                            redcornerWeightclass = "36";
-                            break;
-                          case "14":
-                            redcornerWeightclass = "32";
-                            break;
-                        }
-                        String redcornerGrade = _notes[index].redcornerGrade;
-                        switch (redcornerGrade) {
-                          case "0":
-                            redcornerGrade = "";
-                            break;
-                          case "1":
-                            redcornerGrade = "A";
-                            break;
-                          case "2":
-                            redcornerGrade = "B";
-                            break;
-                          case "3":
-                            redcornerGrade = "C";
-                            break;
-                          case "4":
-                            redcornerGrade = "N";
-                            break;
-                          case "5":
-                            redcornerGrade = "J";
-                            break;
-                        }
-                        return new GestureDetector(
-                          onTap: () {
-                            /*Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              AthletesDetailPage(athlete: _notes[index]),
-                        ),
-                      );*/
-                          },
-                          child: new Card(
-                            color: Colors.blueGrey[50],
-                            elevation: 5,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                //redcorner
-                                Container(
-                                  height: 220,
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        topLeft: Radius.circular(5)),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      //red corner
-                                      Container(
-                                        width: 130,
-                                        height: 130,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(5),
-                                              topLeft: Radius.circular(5)),
-                                          image: new DecorationImage(
-                                              image: new NetworkImage(
-                                                  _notes[index]
-                                                      .redcornerPicture),
-                                              fit: BoxFit.cover),
-                                        ),
-                                      ),
-                                      //red corner
-                                      Container(
-                                        padding: const EdgeInsets.all(10),
-                                        height: 90,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                                _notes[index].redcornerFullName,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                            Text(_notes[index]
-                                                .redcornerNickname),
-                                            Text(_notes[index]
-                                                .redcornerNationality),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                //vs
-                                Container(
-                                  padding: const EdgeInsets.only(top: 30),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text('Weight: ' + redcornerWeightclass),
-                                      Text('Grade: ' + redcornerGrade),
-                                      Text(' '),
-                                      Text('VS',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
-                                    ],
-                                  ),
-                                ),
-                                //blue corner
-                                Container(
-                                  height: 220,
-                                  width: 187.4,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(5),
-                                        topLeft: Radius.circular(5)),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: <Widget>[
-                                      //red corner
-                                      Container(
-                                        width: 130,
-                                        height: 130,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(5),
-                                              topLeft: Radius.circular(5)),
-                                          image: new DecorationImage(
-                                              image: new NetworkImage(
-                                                  _notes[index]
-                                                      .bluecornerPicture),
-                                              fit: BoxFit.cover),
-                                        ),
-                                      ),
-                                      //red corner
-                                      Container(
-                                        padding: const EdgeInsets.all(10),
-                                        height: 90,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                                _notes[index]
-                                                    .bluecornerFullName,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                            Text(_notes[index]
-                                                .bluecornerNickname),
-                                            Text(_notes[index]
-                                                .bluecornerNationality),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                      itemCount: _notes.length,
-                    ),
-                  ),
-                ],
+                ),
               ),
+              childCount: _notes.length,
             ),
           ),
         ],
